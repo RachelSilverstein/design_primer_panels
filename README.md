@@ -49,7 +49,9 @@ Parameters can be set within the header of the python script 'design_primer_pane
     "PRIMER_NUM_RETURN": 1,
 }
 ```
+
 * `PRIMER_3_PARAMS_RELAXED`: Fallback parameters to be used by Primer3 if fails to design primers with optimal parameters. Default values shown below.
+
 ```
 PRIMER3_PARAMS_RELAXED = {
     **PRIMER3_PARAMS_STRICT,
