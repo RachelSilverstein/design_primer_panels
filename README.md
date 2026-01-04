@@ -66,6 +66,8 @@ Parameters can be set within the header of the python script 'design_primer_pane
     "PRIMER_MAX_SIZE": 30
   }
   ```
+* `P5_FLAP` : P5 flap to append to forward primer (default = "AATGATACGGCGACCACCGAGATCTACAC")
+* `P7_FLAP` : P7 flap tp append to reverse primer (default = "CAAGCAGAAGACGGCATACGAGAT")
 
 ## Output
 CSV file containing, for each site:
