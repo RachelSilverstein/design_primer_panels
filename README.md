@@ -32,39 +32,40 @@ Parameters can be set within the header of the python script 'design_primer_pane
 * `GENOME_FASTA`: path to human genome fasta file
 * `FLANK_SIZE`: number of bases on either side of target region to retrieve from human genome sequence - primers will be designed somewhere within these flanking regions (default=200)
 * `PRODUCT_SIZE_RANGE`: minimum and maximum possible lengths of the PCR amplicon to be designed (without P5 and P7 flaps included) (defulault [150, 250])
-* `PRIMER_3_PARAMS_STRICT`: ideal parameters for Primer3 primer designs. These parameters will be tried first. Default values are shown below. If no Primer3 fails to design primers with these parameters, relaxed parameters will be used.
+* `PRIMER_3_PARAMS_STRICT`: ideal parameters for Primer3 primer designs. These parameters will be tried first. Default values are shown below. If no Primer3 fails to design primers with these parameters,     relaxed parameters will be used.
+  
+   ```
+   PRIMER3_PARAMS_STRICT = {
+     "PRIMER_MIN_SIZE": 18,
+     "PRIMER_OPT_SIZE": 23,
+     "PRIMER_MAX_SIZE": 26,
+  
+     "PRIMER_MIN_TM": 63.0,
+     "PRIMER_OPT_TM": 65.0,
+     "PRIMER_MAX_TM": 70.0,
+  
+     "PRIMER_MIN_GC": 40.0,
+     "PRIMER_MAX_GC": 60.0,
+  
+     "PRIMER_NUM_RETURN": 1,
+  }
   ```
-  PRIMER3_PARAMS_STRICT = {
-    "PRIMER_MIN_SIZE": 18,
-    "PRIMER_OPT_SIZE": 23,
-    "PRIMER_MAX_SIZE": 26,
-
-    "PRIMER_MIN_TM": 63.0,
-    "PRIMER_OPT_TM": 65.0,
-    "PRIMER_MAX_TM": 70.0,
-
-    "PRIMER_MIN_GC": 40.0,
-    "PRIMER_MAX_GC": 60.0,
-
-    "PRIMER_NUM_RETURN": 1,
-}
-```
 
 * `PRIMER_3_PARAMS_RELAXED`: Fallback parameters to be used by Primer3 if fails to design primers with optimal parameters. Default values shown below.
 
-```
-PRIMER3_PARAMS_RELAXED = {
+  ```
+  PRIMER3_PARAMS_RELAXED = {
     **PRIMER3_PARAMS_STRICT,
     "PRIMER_MIN_TM": 58.0,
     "PRIMER_OPT_TM": 65.0,
     "PRIMER_MAX_TM": 70.0,
-
+  
     "PRIMER_MIN_GC": 35.0,
     "PRIMER_MAX_GC": 65.0,
-
+  
     "PRIMER_MAX_SIZE": 30
-}
-```
+  }
+  ```
 
 ## Output
 CSV file containing, for each site:
