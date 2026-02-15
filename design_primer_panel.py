@@ -12,11 +12,11 @@ import sys
 # CONFIGURATION — EDIT THESE VALUES
 # ======================================================
 
-GENOME_FASTA = "/Users/kleinstiverlab12/Documents/hg38.fa"
+GENOME_FASTA = "/Users/Rachel/genomes/hg38.fa"
 
 FLANK_SIZE = 200
 
-PRODUCT_SIZE_RANGE = [150, 250]
+PRODUCT_SIZE_RANGE = [150, 270]
 
 # ---- Primary (strict) Primer3 parameters ----
 PRIMER3_PARAMS_STRICT = {
@@ -31,7 +31,7 @@ PRIMER3_PARAMS_STRICT = {
     "PRIMER_MIN_GC": 40.0,
     "PRIMER_MAX_GC": 60.0,
 
-    "PRIMER_NUM_RETURN": 1,
+    "PRIMER_NUM_RETURN": 3,
 }
 
 # ---- Relaxed parameters (used only if strict fails) ----
@@ -48,8 +48,8 @@ PRIMER3_PARAMS_RELAXED = {
 }
 
 # Adapter / flap sequences (5' appended)
-P5_FLAP = "AATGATACGGCGACCACCGAGATCTACAC"
-P7_FLAP = "CAAGCAGAAGACGGCATACGAGAT"
+P5_FLAP = "ACACTCTTTCCCTACACGACGCTCTTCCGATCT"
+P7_FLAP = "GACTGGAGTTCAGACGTGTGCTCTTCCGATCT"
 
 # ======================================================
 # FUNCTIONS
